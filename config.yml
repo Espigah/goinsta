@@ -1,0 +1,11 @@
+login: login@email.com
+password: password
+
+## category
+search: sport
+
+## Sleep duration between follow (seconds)
+interval: 1
+
+## max to follow
+max: 20
