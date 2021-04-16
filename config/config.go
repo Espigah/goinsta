@@ -11,13 +11,13 @@ import (
 	"strconv"
 )
 
-func Read(filename string) (*page.Conf, error) {
+func Read(filename string) (*page.Config, error) {
 
 	max := getEnvAsInt("GOINSTA_MAX", 20)
 
 	interval := getEnvAsInt("GOINSTA_INTERVAL", 1)
 
-	c := &page.Conf{
+	c := &page.Config{
 		Max:      max,
 		Login:    os.Getenv("GOINSTA_LOGIN"),
 		Password: os.Getenv("GOINSTA_PASSWORD"),

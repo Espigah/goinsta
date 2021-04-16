@@ -8,7 +8,7 @@ import (
 	"github.com/tebeka/selenium"
 )
 
-type Conf struct {
+type Config struct {
 	Max      int
 	Login    string
 	Password string
@@ -16,18 +16,18 @@ type Conf struct {
 	Interval int
 }
 
-func Browse(config *Conf, wd selenium.WebDriver) {
+func Browse(c *Config, wd selenium.WebDriver) {
 	finder := finder.Finder{WebDriver: wd}
 
 	loginPage := login.LoginPage{Finder: finder}
-	loginPage.SetLogin(config.Login)
-	loginPage.SetPassword(config.Password)
+	loginPage.SetLogin(c.Login)
+	loginPage.SetPassword(c.Password)
 	loginPage.Submit()
 
 	homePage := home.HomePage{Finder: finder}
-	homePage.Search(config.Search)
+	homePage.Search(c.Search)
 
-	categoryPage := target.CategoryPage{Finder: finder}
+	categoryPage := category.CategoryPage{Finder: finder}
 	categoryPage.ShowFollowers()
-	categoryPage.Follow(config.Max, config.Interval)
+	categoryPage.Follow(c.Max, c.Interval)
 }
