@@ -3,7 +3,7 @@ package main
 import (
 	"github.com/goinsta/config"
 	"github.com/goinsta/page"
-	"github.com/goinsta/selenium"
+	"github.com/goinsta/web"
 	"log"
 	"time"
 )
@@ -20,11 +20,11 @@ func main() {
 		log.Fatal(err)
 	}
 
-	service := selenium.CreateService()
+	service := web.CreateService()
 	//Delay service shutdown
 	defer service.Stop()
 
-	wd := selenium.CreateWebDriver()
+	wd := web.CreateWebDriver()
 	defer wd.Quit()
 
 	if err := wd.Get(pageTarget); err != nil {

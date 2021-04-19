@@ -1,4 +1,4 @@
-package selenium
+package web
 
 import (
 	"github.com/tebeka/selenium"

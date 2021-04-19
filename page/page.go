@@ -1,10 +1,10 @@
 package page
 
 import (
-	"github.com/goinsta/finder"
 	"github.com/goinsta/page/category"
 	"github.com/goinsta/page/home"
 	"github.com/goinsta/page/login"
+	"github.com/goinsta/web"
 	"github.com/tebeka/selenium"
 )
 
@@ -17,7 +17,7 @@ type Config struct {
 }
 
 func Browse(c *Config, wd selenium.WebDriver) {
-	finder := finder.Finder{WebDriver: wd}
+	finder := web.Finder{WebDriver: wd}
 
 	loginPage := login.LoginPage{Finder: finder}
 	loginPage.SetLogin(c.Login)

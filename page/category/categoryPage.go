@@ -4,11 +4,11 @@ import (
 	"log"
 	"time"
 
-	"github.com/goinsta/finder"
+	"github.com/goinsta/web"
 )
 
 type CategoryPage struct {
-	Finder finder.Finder
+	Finder web.Finder
 }
 
 func (categoryPage *CategoryPage) ShowFollowers() {

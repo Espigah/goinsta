@@ -4,12 +4,12 @@ import (
 	"log"
 	"time"
 
-	"github.com/goinsta/finder"
+	"github.com/goinsta/web"
 	"github.com/tebeka/selenium"
 )
 
 type HomePage struct {
-	Finder finder.Finder
+	Finder web.Finder
 }
 
 func (homePage *HomePage) Search(text string) {
