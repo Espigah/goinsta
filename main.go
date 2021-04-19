@@ -9,7 +9,7 @@ import (
 )
 
 const (
-	pageTarget = `https://www.instagram.com/`
+	targetPage = `https://www.instagram.com/`
 )
 
 func main() {
@@ -27,7 +27,7 @@ func main() {
 	wd := web.CreateWebDriver()
 	defer wd.Quit()
 
-	if err := wd.Get(pageTarget); err != nil {
+	if err := wd.Get(targetPage); err != nil {
 		log.Fatalf("Open url: %v", err)
 	}
 
